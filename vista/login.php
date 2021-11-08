@@ -16,7 +16,7 @@
             <img src="../img/imagen_login.png" alt="">
         </div>
         <div class="contenido-login">
-            <form action="" method="">
+            <form action="../controlador/loginController.php" method="post">
                 <img src="../img/icono_login.png" alt="">
                 <h2>Farmacia</h2>
                 <div class="input-div dni">
