@@ -4,7 +4,7 @@ if($_SESSION['us_tipo']==1){
     include_once 'layouts/header.php';
 ?>
 
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>Farmacia | Catalogo</title>
 
 <?php
     include_once 'layouts/nav.php';
@@ -16,12 +16,12 @@ if($_SESSION['us_tipo']==1){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1>Catalogo</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
+              <li class="breadcrumb-item active">Catalogo</li>
             </ol>
           </div>
         </div>
@@ -65,6 +65,6 @@ if($_SESSION['us_tipo']==1){
 include_once 'layouts/footer.php';
 }
 else{
-    header('Location: ../vista/login.php');
+    header('Location: ../index.php');
 }
 ?>

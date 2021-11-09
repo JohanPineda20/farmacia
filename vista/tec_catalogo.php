@@ -1,9 +1,10 @@
 <?php
 session_start();
 if($_SESSION['us_tipo']==2){
+    include_once 'layouts/header.php';
 ?>
 
-<title>AdminLTE 3 | Blank Page</title>
+    <title>AdminLTE 3 | Blank Page</title>
 
 <?php
     include_once 'layouts/nav.php';
@@ -64,6 +65,6 @@ if($_SESSION['us_tipo']==2){
 include_once 'layouts/footer.php';
 }
 else{
-    header('Location: ../vista/login.php');
+    header('Location: ../index.php');
 }
 ?>
