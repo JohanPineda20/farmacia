@@ -22,7 +22,7 @@ if($_SESSION['us_tipo']==1){
       </div>
       <div class="modal-body">
         <div class="text-center">
-            <img src="../img/avatar.png" class="profile-user-img img-fluid img-circle" alt="">
+            <img id="avatar3" src="../img/avatar.png" class="profile-user-img img-fluid img-circle" alt="">
         </div>
         <div class="text-center">
             <b>
@@ -73,7 +73,7 @@ if($_SESSION['us_tipo']==1){
       </div>
       <div class="modal-body">
         <div class="text-center">
-            <img src="../img/avatar.png" class="profile-user-img img-fluid img-circle" alt="">
+            <img id="avatar1" src="../img/avatar.png" class="profile-user-img img-fluid img-circle" alt="">
         </div>
         <div class="text-center">
             <b>
@@ -82,11 +82,11 @@ if($_SESSION['us_tipo']==1){
                 ?>
             </b>
         </div>
-        <div class="alert alert-success text-center" id="update" style="display:none;">
-            <span><i class="fas fa-check m-1"></i>Contraseña actualizada</span>
+        <div class="alert alert-success text-center" id="edit" style="display:none;">
+            <span><i class="fas fa-check m-1"></i>Foto actualizada con éxito</span>
         </div>
-        <div class="alert alert-danger text-center" id="noupdate" style="display:none;">
-            <span><i class="fas fa-times m-1"></i>La contraseña es incorrecta</span>
+        <div class="alert alert-danger text-center" id="noedit" style="display:none;">
+            <span><i class="fas fa-times m-1"></i>Foto no válida</span>
         </div>
         <form id="form-photo" enctype="multipart/form-data">
             <div class="input-group mb-3 ml-5 mt-2">
@@ -129,7 +129,7 @@ if($_SESSION['us_tipo']==1){
                         <div class="card card-success card-outline">
                             <div class="card-body box-profile">
                                 <div class="text-center">
-                                    <img src="../img/avatar.png" class="profile-user-img img-fluid img-circle" alt="">
+                                    <img id="avatar2" src="../img/avatar.png" class="profile-user-img img-fluid img-circle" alt="">
                                 </div>
                                 <div class="text-center mt-1">
                                     <button data-toggle="modal" data-target="#cambiophoto" type="button" class="btn btn-primary btn-sm">Cambiar foto</button>

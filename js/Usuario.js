@@ -38,7 +38,10 @@ $(document).ready(function(){//jquery, una vez cargado el documento html, se va 
            $('#correo_us').html(correo);
            $('#sexo_us').html(sexo);
            $('#adicional_us').html(adicional);
-
+           $('#avatar1').attr('src',usuario.avatar);
+           $('#avatar2').attr('src',usuario.avatar);
+           $('#avatar3').attr('src',usuario.avatar);
+           $('#avatar4').attr('src',usuario.avatar);
         })
     }
     $(document).on('click','.edit',(e)=>{
@@ -109,8 +112,22 @@ $(document).ready(function(){//jquery, una vez cargado el documento html, se va 
             cache:false,
             processData:false,
             contentType:false 
-        }).done(function(reponse){
-            console.log(reponse);
+        }).done(function(response){
+            const json= JSON.parse(response);
+            if(json.alert=='edit'){
+            $('#avatar1').attr('src',json.ruta);
+            $('#edit').show(1000);
+            $('#edit').hide(4000);
+            $('#form-photo').trigger('reset');
+            buscar_usuario(id_usuario);//actualizar la foto sin recargar la pagina
+            }
+            else{
+                $('#noedit').show(1000);
+                $('#noedit').hide(4000);
+                $('#form-photo').trigger('reset');
+            }
+            
         });
+        e.preventDefault();
     })
 })
