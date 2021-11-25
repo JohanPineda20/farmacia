@@ -67,6 +67,12 @@
                 Datos personales
               </p>
             </a>
+            <a href="adm_usuario.php" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Gestion Usuarios
+              </p>
+            </a>
           </li>
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
