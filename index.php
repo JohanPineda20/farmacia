@@ -12,7 +12,7 @@
 <?php
 session_start();
 if(!empty($_SESSION['us_tipo'])){
-    header('Location: controlador/loginController.php');
+    header('Location: controller/loginController.php');
 }
 else{
     session_destroy();
@@ -24,7 +24,7 @@ else{
             <img src="img/imagen_login.png" alt="">
         </div>
         <div class="contenido-login">
-            <form action="controlador/loginController.php" method="post">
+            <form action="controller/loginController.php" method="post">
                 <img src="img/icono_login.png" alt="">
                 <h2>Farmacia</h2>
                 <div class="input-div dni">
