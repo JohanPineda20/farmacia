@@ -22,7 +22,16 @@ $(document).ready(function() { //jquery, una vez cargado el documento html, se v
             apellidos += `${usuario.apellidos}`;
             edad += `${usuario.edad}`;
             dni += `${usuario.dni}`;
-            tipo += `${usuario.tipo}`;
+           //tipo, si es root pintelo de rojo, si es administrador pintelo de amarillo y si es tecnico pintelo de azul
+           if(usuario.tipo=='Administrador'){
+                tipo+=`<h1 class="badge badge-warning">${usuario.tipo}</h1>`;
+            }
+           if(usuario.tipo=='Tecnico'){
+                tipo+=`<h1 class="badge badge-info">${usuario.tipo}</h1>`;
+            }
+            if(usuario.tipo=='Root'){
+                tipo+=`<h1 class="badge badge-danger">${usuario.tipo}</h1>`;
+            }
             telefono += `${usuario.telefono}`;
             residencia += `${usuario.residencia}`;
             correo += `${usuario.correo}`;

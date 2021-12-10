@@ -142,11 +142,11 @@ if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3){
                                         <b style="color:#0B7300">Edad</b> <a id="edad" class="float-right">12</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b style="color:#0B7300">DNI</b> <a id="dni_us" class="float-right">12</a>
+                                      <b style="color:#0B7300">DNI</b> <a id="dni_us" class="float-right">12</a>
                                     </li>
                                     <li class="list-group-item">
                                         <b style="color:#0B7300">Tipo Usuario</b> 
-                                        <span id="us_tipo" class="float-right badge badge-primary">Administrador</span>
+                                        <span id="us_tipo" class="float-right">Administrador</span>
                                     </li>    
                                     <button data-toggle="modal" data-target="#cambiocontraseña" type="button" class="btn btn-block btn-outline-warning btn-sm">Cambiar contraseña</button>
                                 </ul>
