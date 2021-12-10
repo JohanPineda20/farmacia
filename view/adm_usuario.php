@@ -67,10 +67,10 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
                     </div>
                     <div class="card-body">
                         <div class="alert alert-success text-center" id="add" style="display:none;">
-                            <span><i class="fas fa-check m-1"></i>Se agrego correctamente</span>
+                            <span><i class="fas fa-check m-1"></i>Usuario agregado correctamente</span>
                         </div>
                         <div class="alert alert-danger text-center" id="noadd" style="display:none;">
-                            <span><i class="fas fa-times m-1"></i>El DNI ya existe</span>
+                            <span><i class="fas fa-times m-1"></i>El usuario ya existe</span>
                         </div>
 
 
@@ -110,6 +110,7 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
             </div>
         </div>
     </div>
+    
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
