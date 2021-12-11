@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3 ){
+if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3 ){//controlar que solo los usuarios de tipo 1 y 3 o sea administrador y root accedan a esta vista 
     include_once 'layouts/header.php';
 ?>
 
@@ -161,7 +161,20 @@ if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3 ){
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body"></div>
+                                        <div class="card-body p-0">
+                                            <table class="table table-over text-nowrap">
+                                                <thead class="table-success">
+                                                    <tr>
+                                                        <th>Laboratorio</th>
+                                                        <th>Logo</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="laboratorios" class="table-active">
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         <div class="card-footer"></div>
                                     </div>
                                 </div>

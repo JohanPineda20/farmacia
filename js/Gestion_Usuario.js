@@ -72,9 +72,10 @@ $(document).ready(function() {
 
                 } else {
                     if (tipo_usuario == 1 && usuarios.tipo_usuario != 1 && usuarios.tipo_usuario != 3) {
-                        template += `<button class = "borrar-usuario btn btn-danger mr-1" type="button" data-toggle="modal" data-target="#confirmar>
-                      <i class = "fas fa-window-close mr-1" > </i> Eliminar 
-                      </button>`;
+                        template += `
+                        <button class = "borrar-usuario btn btn-danger mr-1" type="button" data-toggle="modal" data-target="#confirmar>
+                         <i class = "fas fa-window-close mr-1" > </i> Eliminar 
+                        </button>`;
                     }
                 }
                 template +=
@@ -84,15 +85,15 @@ $(document).ready(function() {
                 </div>
                      `;
             })
-            $('#usuarios').html(template);
+            $('#usuarios').html(template); //agrega todo este html a div con id usuarios de la vista adm_usuario
         });
     }
-    $(document).on('keyup', '#buscar', function() {
+    $(document).on('keyup', '#buscar', function() {//cada que se escribe algo en el input con id buscar se ejecuta la siguiente funcion:
 
-        let valor = $(this).val();
-        if (valor != "") {
+        let valor = $(this).val();//almacena el valor que hay en el input
+        if (valor != "") {//si hay algo en valor lo manda al metodo buscar_datos y lo busca
             buscar_datos(valor);
-        } else {
+        } else {// y si valor está vacio es decir no se ha escrito nada o el input de buscar esta vacio entonces simplemente invoca el metodo buscar_datos para que me liste a todos los que estan creados
             buscar_datos();
         }
     });
@@ -133,14 +134,14 @@ $(document).ready(function() {
       $('#id_user').val(id);
       $('#funcion').val(funcion);
     });
-    $(document).on('click','.borrar-usuario',(e)=>{
-      const elemento=$(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
-      const id=$(elemento).attr('usuarioId');
+    $(document).on('click','.borrar-usuario',(e)=>{//al dar clic al boton con la clase borrar-usuario se ejecuta lo siguiente:
+      const elemento=$(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;//selecciona el div que tiene el atributo usuarioId
+      const id=$(elemento).attr('usuarioId');//almacena el valor que hay en el atributo usuarioId
       funcion='borrar_usuario';
-      $('#id_user').val(id);
+      $('#id_user').val(id); //pasa el valor del atributo usuarioId a input escondido que esta en el modal confirmar de la vista adm_usuario
       $('#funcion').val(funcion);
     });
-    $('#form-confirmar').submit(e=>{
+    $('#form-confirmar').submit(e=>{//este es el formulario que esta en el modal confirmar y lo envia con los datos que fueron pasados en el metodo anterior
       let pass=$('#oldpass').val();
       let id_usuario=$('#id_user').val();
       funcion=$('#funcion').val();
