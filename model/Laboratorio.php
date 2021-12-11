@@ -42,6 +42,39 @@ class Laboratorio{
             return $this->objetos;
         }
     }
-}
 
-?>
+    function cambiar_logo($id, $nombre)
+    {
+        $sql = "SELECT avatar FROM laboratorio where id_laboratorio =:id";
+        $query = $this->acceso->prepare($sql);
+        $query->execute(array(':id' => $id));
+        $this->objetos = $query->fetchall();
+        
+        $sql = "UPDATE laboratorio SET avatar=:nombre where id_laboratorio =:id";
+        $query = $this->acceso->prepare($sql);
+        $query->execute(array(':id' => $id, ':nombre' => $nombre));
+        return $this->objetos;
+    }
+
+    function borrar($id){
+        $sql = "DELETE FROM laboratorio where id_laboratorio =:id";
+        $query = $this->acceso->prepare($sql);
+        $query->execute(array(':id' => $id));
+        if(!empty($query->execute(array(':id' => $id)))){
+            echo 'borrado';
+        }else{
+            echo 'No borrado';
+        }
+        
+    }
+
+
+    function editar($id_editado,$nombre){
+        $sql = "UPDATE laboratorio SET nombre=:nombre where id_laboratorio =:id";
+        $query = $this->acceso->prepare($sql);
+        $query->execute(array(':id' => $id_editado,':nombre' => $nombre));
+        echo 'edit';
+       
+    }
+
+}
