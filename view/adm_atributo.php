@@ -20,11 +20,11 @@ if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3 ){
                         </button>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-success text-center" id="add" style="display:none;">
-                            <span><i class="fas fa-check m-1"></i>Se agrego correctamente</span>
+                        <div class="alert alert-success text-center" id="add-laboratorio" style="display:none;">
+                            <span><i class="fas fa-check m-1"></i>El laboratorio se agregó correctamente</span>
                         </div>
-                        <div class="alert alert-danger text-center" id="noadd" style="display:none;">
-                            <span><i class="fas fa-times m-1"></i>El DNI ya existe</span>
+                        <div class="alert alert-danger text-center" id="noadd-laboratorio" style="display:none;">
+                            <span><i class="fas fa-times m-1"></i>El laboratorio ya existe</span>
                         </div>
                         <form id="form-crear-laboratorio">
                             <div class="form-group">
@@ -53,11 +53,11 @@ if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3 ){
                         </button>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-success text-center" id="add" style="display:none;">
-                            <span><i class="fas fa-check m-1"></i>Se agrego correctamente</span>
+                        <div class="alert alert-success text-center" id="add-tipo" style="display:none;">
+                            <span><i class="fas fa-check m-1"></i>El tipo de producto se agregó correctamente</span>
                         </div>
-                        <div class="alert alert-danger text-center" id="noadd" style="display:none;">
-                            <span><i class="fas fa-times m-1"></i>El DNI ya existe</span>
+                        <div class="alert alert-danger text-center" id="noadd-tipo" style="display:none;">
+                            <span><i class="fas fa-times m-1"></i>El tipo de producto ya existe</span>
                         </div>
                         <form id="form-crear-tipo">
                             <div class="form-group">
@@ -86,11 +86,11 @@ if($_SESSION['us_tipo']==1 || $_SESSION['us_tipo']==3 ){
                         </button>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-success text-center" id="add" style="display:none;">
-                            <span><i class="fas fa-check m-1"></i>Se agrego correctamente</span>
+                        <div class="alert alert-success text-center" id="add-presentacion" style="display:none;">
+                            <span><i class="fas fa-check m-1"></i>La presentación de producto se agregó correctamente</span>
                         </div>
-                        <div class="alert alert-danger text-center" id="noadd" style="display:none;">
-                            <span><i class="fas fa-times m-1"></i>El DNI ya existe</span>
+                        <div class="alert alert-danger text-center" id="noadd-presentacion" style="display:none;">
+                            <span><i class="fas fa-times m-1"></i>La presentación de producto ya existe</span>
                         </div>
                         <form id="form-crear-presentacion">
                             <div class="form-group">
@@ -222,3 +222,4 @@ else{
     header('Location: ../index.php');
 }
 ?>
+<script src="../js/Laboratorio.js"></script>
