@@ -24,9 +24,9 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
                     </div>
                     <div class="text-center">
                         <b id="nombre_logo"></b>
-        </div>
-        <div class=" alert alert-success text-center" id="edit" style="display:none;">
-                            <span><i class="fas fa-check m-1"></i>Logo actualizado con éxito</span>
+                    </div>
+                    <div class=" alert alert-success text-center" id="edit" style="display:none;">
+                        <span><i class="fas fa-check m-1"></i>Logo actualizado con éxito</span>
                     </div>
                     <div class="alert alert-danger text-center" id="noedit" style="display:none;">
                         <span><i class="fas fa-times m-1"></i>logo no válida</span>
@@ -48,34 +48,113 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
         </div>
     </div>
 
-        <div class="modal fade" id="crearlaboratorio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Crear laboratorio</h3>
-                            <button class="close" data-dismiss="modal" aria-label="close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+    <div class="modal fade" id="crearlaboratorio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Crear laboratorio</h3>
+                        <button class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success text-center" id="add-laboratorio" style="display:none;">
+                            <span><i class="fas fa-check m-1"></i>El laboratorio se agregó correctamente</span>
                         </div>
-                        <div class="card-body">
-                            <div class="alert alert-success text-center" id="add-laboratorio" style="display:none;">
-                                <span><i class="fas fa-check m-1"></i>El laboratorio se agregó correctamente</span>
-                            </div>
-                            <div class="alert alert-danger text-center" id="noadd-laboratorio" style="display:none;">
-                                <span><i class="fas fa-times m-1"></i>El laboratorio ya existe</span>
-                            </div>
+                        <div class="alert alert-danger text-center" id="noadd-laboratorio" style="display:none;">
+                            <span><i class="fas fa-times m-1"></i>El laboratorio ya existe</span>
+                        </div>
 
-                            <div class="alert alert-success text-center" id="edit-lab" style="display:none;">
+                        <div class="alert alert-success text-center" id="edit-lab" style="display:none;">
+                            <span><i class="fas fa-check m-1"></i>Se edito correctamente</span>
+                        </div>
+
+                        <form id="form-crear-laboratorio">
+                            <div class="form-group">
+                                <label for="nombre-laboratorio">Nombre</label>
+                                <input id="nombre-laboratorio" type="text" class="form-control" placeholder="Ingrese Nombre" required>
+                                <input type="hidden" id="id_editar_lab">
+
+                            </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="creartipo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Crear tipo</h3>
+                        <button class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success text-center" id="add-tipo" style="display:none;">
+                            <span><i class="fas fa-check m-1"></i>El tipo de producto se agregó correctamente</span>
+                        </div>
+                        <div class="alert alert-danger text-center" id="noadd-tipo" style="display:none;">
+                            <span><i class="fas fa-times m-1"></i>El tipo de producto ya existe</span>
+                            <div class="alert alert-success text-center" id="edit-tip" style="display:none;">
                                 <span><i class="fas fa-check m-1"></i>Se edito correctamente</span>
                             </div>
 
-                            <form id="form-crear-laboratorio">
+                        </div>
+                        <form id="form-crear-tipo">
+                            <div class="form-group">
+                                <label for="nombre-tipo">Nombre</label>
+                                <input id="nombre-tipo" type="text" class="form-control" placeholder="Ingrese Nombre" required>
+                                <input type="hidden" id="id_editar_tip">
+                            </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="modal fade" id="crearpresentacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Crear presentación</h3>
+                        <button class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                        <div class="card-body">
+                            <div class="alert alert-success text-center" id="add-pre" style="display:none;">
+                                <span><i class="fas fa-check m-1"></i>La presentacion se agregó correctamente</span>
+                            </div>
+                            <div class="alert alert-danger text-center" id="noadd-pre" style="display:none;">
+                                <span><i class="fas fa-times m-1"></i>La presentacion ya existe</span>
+                            </div>
+
+                            <div class="alert alert-success text-center" id="edit-pre" style="display:none;">
+                                <span><i class="fas fa-check m-1"></i>Se edito correctamente</span>
+                            </div>
+                            <form id="form-crear-presentacion">
                                 <div class="form-group">
-                                    <label for="nombre-laboratorio">Nombre</label>
-                                    <input id="nombre-laboratorio" type="text" class="form-control" placeholder="Ingrese Nombre" required>
-                                    <input type="hidden" id="id_editar_lab" >
-                               
+                                    <label for="nombre-presentacion">Nombre</label>
+                                    <input id="nombre-presentacion" type="text" class="form-control" placeholder="Ingrese Nombre" required>
+                                    <input type="hidden" id="id_editar_pre">
                                 </div>
                         </div>
                         <div class="card-footer">
@@ -83,81 +162,11 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
                             <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
                             </form>
                         </div>
-                    </div>
-                </div>
+                   </div>
             </div>
         </div>
-    
+    </div>
 
-  <div class="modal fade" id="creartipo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Crear tipo</h3>
-                            <button class="close" data-dismiss="modal" aria-label="close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert alert-success text-center" id="add-tipo" style="display:none;">
-                                <span><i class="fas fa-check m-1"></i>El tipo de producto se agregó correctamente</span>
-                            </div>
-                            <div class="alert alert-danger text-center" id="noadd-tipo" style="display:none;">
-                                <span><i class="fas fa-times m-1"></i>El tipo de producto ya existe</span>
-                            </div>
-                            <form id="form-crear-tipo">
-                                <div class="form-group">
-                                    <label for="nombre-tipo">Nombre</label>
-                                    <input id="nombre-tipo" type="text" class="form-control" placeholder="Ingrese Nombre" required>
-                                </div>
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn bg-gradient-primary float-right m-1">Crear</button>
-                            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    
-        <div class="modal fade" id="crearpresentacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Crear presentación</h3>
-                            <button class="close" data-dismiss="modal" aria-label="close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert alert-success text-center" id="add-presentacion" style="display:none;">
-                                <span><i class="fas fa-check m-1"></i>La presentación de producto se agregó correctamente</span>
-                            </div>
-                            <div class="alert alert-danger text-center" id="noadd-presentacion" style="display:none;">
-                                <span><i class="fas fa-times m-1"></i>La presentación de producto ya existe</span>
-                            </div>
-                            <form id="form-crear-presentacion">
-                                <div class="form-group">
-                                    <label for="nombre-presentacion">Nombre</label>
-                                    <input id="nombre-presentacion" type="text" class="form-control" placeholder="Ingrese Nombre" required>
-                                </div>
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn bg-gradient-primary float-right m-1">Crear</button>
-                            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -218,8 +227,6 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
                                                                 <th>Accion</th>
                                                                 <th>Logo</th>
                                                                 <th>Laboratorio</th>
-
-
                                                             </tr>
                                                         </thead>
                                                         <tbody id="laboratorios" class="table-active">
@@ -230,6 +237,7 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
                                                 <div class="card-footer"></div>
                                             </div>
                                         </div>
+
                                         <div class="tab-pane" id="tipo">
                                             <div class="card card-success">
                                                 <div class="card-header">
@@ -243,10 +251,23 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card-body"></div>
+                                                <div class="card-body p-0 table-responsive">
+                                                    <table class="table table-hover text-nowrap">
+                                                        <thead class="table-success">
+                                                            <tr>
+                                                                <th>Accion</th>
+                                                                <th>Tipo</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tipos" class="table-active">
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                                 <div class="card-footer"></div>
                                             </div>
                                         </div>
+
                                         <div class="tab-pane" id="presentacion">
                                             <div class="card card-success">
                                                 <div class="card-header">
@@ -260,7 +281,20 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card-body"></div>
+                                                <div class="card-body p-0 table-responsive">
+                                                    <table class="table table-hover text-nowrap">
+                                                        <thead class="table-success">
+                                                            <tr>
+                                                                <th>Accion</th>
+                                                                <th>Presentacion</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="presentaciones" class="table-active">
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                                 <div class="card-footer"></div>
                                             </div>
                                         </div>
@@ -288,3 +322,5 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) { //controlar que so
 }
 ?>
 <script src="../js/Laboratorio.js"></script>
+<script src="../js/tipo.js"></script>
+<script src="../js/presentacion.js"></script>
