@@ -6,13 +6,12 @@ if ($_POST['funcion'] == 'crear') {
     $nombre = $_POST['nombre_laboratorio'];
     $avatar = 'lab_default.png';
     $laboratorio->crear($nombre, $avatar);
-    
 }
 
 if ($_POST['funcion'] == 'editar') {
     $nombre = $_POST['nombre_laboratorio'];
     $id_editado = $_POST['id_editado'];
-    $laboratorio->editar($id_editado,$nombre);
+    $laboratorio->editar($id_editado, $nombre);
 }
 
 if ($_POST['funcion'] == 'buscar') {
@@ -62,4 +61,18 @@ if ($_POST['funcion'] == 'cambiar_logo') {
 if ($_POST['funcion'] == 'borrar') {
     $id = $_POST['id'];
     $laboratorio->borrar($id);
+}
+
+if ($_POST['funcion'] == 'rellenar_laboratorios') {
+    $laboratorio->rellenar_laboratorios();
+    $json = array();
+    foreach ($laboratorio->objetos as $objeto) {
+        $json[] = array(
+            'id' => $objeto->id_laboratorio,
+            'nombre'=>$objeto->nombre,
+        );
+    }
+
+    $jsonstring=json_encode($json);
+    echo $jsonstring;
 }

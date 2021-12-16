@@ -1,6 +1,9 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
+ 
+ <!-- select2 -->
+ <link rel="stylesheet" href="../css/select2.css">
+<!-- Font Awesome -->
   <link rel="stylesheet" href="../css/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../css/adminlte.min.css">
@@ -18,10 +21,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../view/adm_catalogo.php" class="nav-link">Home</a>
+        <a href="../view/adm_catalogo.php" class="nav-link"><!-- info sea necesaria --></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link"><!-- info sea necesaria --></a>
       </li>
     </ul>
     <!-- Right navbar links -->
@@ -80,6 +83,14 @@
           </li>
           
           <li class="nav-header">Almacen</li>
+          <li class="nav-item">
+            <a href="adm_producto.php" class="nav-link">
+              <i class="nav-icon fas fa-pills"></i>
+              <p>
+                Gestionar Producto
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="adm_atributo.php" class="nav-link">
               <i class="nav-icon fas fa-vials"></i>
